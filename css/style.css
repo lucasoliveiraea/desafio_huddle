@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    min-width: 100vh;
+    background: url(../imagens/bg-desktop.svg) no-repeat hsl(257, 40%, 49%);
+    background-size: cover;
+}
+
+.container {
+    max-width: 1320px;  /* para o conteudo ficar no centro */
+    margin: 0 auto;    /* para o conteudo ficar no centro */
+    height: 100vh;    
+}
+
+.casulo {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0;
+    margin: 0 2rem;
+}
+
+.cabecalho__logo {
+    width: 200px;
+    padding-bottom: 20px;
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    gap: 45px; /* espaço entre os itens */
+}
+
+.conteudo__texto--titulo {
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.conteudo__texto--paragrafo {
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8; /* espaçamento entre as linhas */
+    margin-bottom: 30px;
+}
+
+.conteudo__texto--botao {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF;
+    padding: 15px 55px;
+    border-radius: 30px;
+    box-shadow: 0 8px 17px -8px rgba(0, 0, 0, .8);
+    transition: 200ms all ease;
+}
+
+.conteudo__texto--botao:hover {
+    background-color: hsl(300, 69%, 71%);
+    color: #FFFFFF;
+}
+
+.midia {
+    text-align: right;
+}
+
+.fa-brands {
+    color: #FFFFFF;
+    font-size: 18px;
+    position: relative; /* usamos isso pois para os circulos vamos usar o absoluto */
+}
+
+.midia__icone:not(:first-child) {
+    margin-left: 2rem;
+}
+
+.fa-brands::after {
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    left: -15px;
+    bottom: -13px;
+    transition: 200ms all ease;
+}
+
+.midia__icone:nth-child(2) {
+    margin-left: 2.5rem;
+}
+
+.midia__icone:hover .fa-brands {
+    color: hsl(300, 69%, 71%);
+}
+
+.fa-brands:hover::after {
+    border-color: hsl(300, 69%, 71%);
+
+}
+
+
+
+
+
+
+/* Resoluções menores ou iguais */
+
+@media screen and (max-width: 1024px){
+    .conteudo__imagem img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .conteudo__texto--titulo {
+        font-size: 30px;
+    }
+
+    .conteudo__texto--botao{
+        padding: 15px 90px;
+    }
+
+    .midia {
+        text-align: center;
+        margin-top: 100px;
+    }
+}
